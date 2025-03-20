@@ -1,38 +1,166 @@
+/* App.css */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   min-height: 100vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start; /* Aligner tout à gauche */
+}
+
+/* Liste des tâches */
+.task-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-left: 0; /* Supprimer le décalage à gauche */
+  text-align: left; /* S'assurer que le texte est aligné à gauche */
+}
+
+/* Chaqu'une tâche */
+.task-item {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 100%; /* Utiliser la largeur totale de la fenêtre */
+  max-width: 400px; /* Fixer la largeur maximale */
+}
+
+/* Agrandir l'élément de tâche au survol */
+.task-item:hover {
+  transform: scale(1.02);
+}
+
+/* Statut des tâches */
+.task-done {
+  background-color: #d4edda; /* Vert clair */
+  border-left: 5px solid #28a745;
+  color: #155724;
+  text-decoration: line-through;
+}
+
+.task-in-progress {
+  background-color: #f8d7da; /* Rouge clair */
+  border-left: 5px solid #dc3545;
+  color: #721c24;
+}
+
+.task-urgent {
+  background-color: #fff3cd; /* Jaune clair */
+  border-left: 5px solid #ffc107;
+  color: #856404;
+}
+
+/* Titre des tâches */
+.task-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left; /* S'assurer que le titre est à gauche */
+}
+
+/* Infos des tâches */
+.task-info {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left; /* Alignement à gauche pour les informations de la tâche */
+}
+
+/* Contacts */
+.task-contacts {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  text-align: left; /* Alignement des contacts à gauche */
+}
+
+/* Footer - Formulaire d'ajout */
+.footer {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  align-self: flex-start; /* Alignement à gauche du footer */
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: left; /* Titre du footer aligné à gauche */
+}
+
+.footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* Formulaire prenant toute la largeur disponible */
+}
+
+.footer input[type='text'],
+.footer input[type='date'],
+.footer input[type='color'] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* Les champs de saisie prennent toute la largeur disponible */
+}
+
+.footer label {
+  font-size: 16px;
+  text-align: left; /* Aligner le texte du label à gauche */
+}
+
+.footer button {
+  background-color: #28a745;
   color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Le bouton prend toute la largeur */
 }
 
-.App-link {
-  color: #61dafb;
+.footer button:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ajout d'un bouton de suppression */
+.delete-btn {
+  background-color: #dc3545; /* Couleur rouge pour la suppression */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: background-color 0.3s ease;
 }
+
+.delete-btn:hover {
+  background-color: #c82333; /* Couleur rouge plus foncée au survol */
+}
+
+.task-item {
+  position: relative; /* Permet de positionner le bouton de suppression */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 400px;
+}
+
+.task-item:hover {
+  transform: scale(1.02);
+}
+
