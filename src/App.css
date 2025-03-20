@@ -9,6 +9,27 @@
   align-items: flex-start; /* Aligner tout à gauche */
 }
 
+/* En-tête avec le titre TodoList */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centrer le titre horizontalement */
+}
+
+/* Style pour le titre TodoList */
+.todo-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-align: center; /* Centrer le texte */
+}
+
 /* Liste des tâches */
 .task-list {
   list-style: none;
@@ -163,4 +184,3 @@
 .task-item:hover {
   transform: scale(1.02);
 }
-

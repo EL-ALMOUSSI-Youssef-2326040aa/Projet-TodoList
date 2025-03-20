@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 
-const Header = ({ taches }) => {
-  const nbTache = taches.length;
-  const nbTachesEncours = taches.filter((tache) => !tache.done).length;
+function Header({ taches }) {
+  // Compter le nombre de tâches en cours
+  const tasksInProgress = taches.filter((task) => !task.done).length;
+  const totalTasks = taches.length;
 
   return (
-    <div style={{ backgroundColor: "yellowgreen", width: "100%" }}>
-      <div>LOGO</div>
-      <div>
-        {nbTache} Taches, dont {nbTachesEncours} en cours.
-      </div>
-    </div>
+    <header className="header">
+      <h1 className="todo-title">TodoList</h1>
+    </header>
   );
-};
+}
 
 export default Header;
