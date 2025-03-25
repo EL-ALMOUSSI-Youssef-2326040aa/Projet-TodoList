@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
+import todos from '../data/todoList.json'; // Importer les données JSON
 
 function Footer({ addTask }) {
   const [title, setTitle] = useState('');
   const [date_echeance, setDateEcheance] = useState('');
   const [urgent, setUrgent] = useState(false);
   const [color, setColor] = useState('#ffffff'); // Valeur par défaut, couleur blanche
+  const [categorie, setCategorie] = useState(''); // Nouvelle catégorie
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (title.trim() === '') return;
 
     const newTask = {
       id: Date.now(),
       title,
       date_echeance,
-      done: false,
       urgent,
-      color, // Ajout de la couleur choisie
-      contacts: [], // Vide par défaut
+      color,
+      categorie, // Ajouter la catégorie
+      done: false,
+      contacts: [],
     };
 
     addTask(newTask);
-
-    // Réinitialiser les champs après soumission
     setTitle('');
     setDateEcheance('');
     setUrgent(false);
-    setColor('#ffffff'); // Réinitialiser la couleur à blanc
+    setColor('#ffffff');
+    setCategorie(''); // Réinitialiser la catégorie
   };
 
   return (
     <div className="footer">
-      <h3>Ajouter une nouvelle tâche</h3>
       <form onSubmit={handleSubmit}>
-        <label>Titre de la tâche</label>
+        <label>Titre</label>
         <input
           type="text"
           value={title}
@@ -45,7 +47,6 @@ function Footer({ addTask }) {
           type="date"
           value={date_echeance}
           onChange={(e) => setDateEcheance(e.target.value)}
-          required
         />
 
         <label>Urgent</label>
@@ -61,6 +62,20 @@ function Footer({ addTask }) {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         />
+
+        <label>Catégorie</label>
+        <select
+          value={categorie}
+          onChange={(e) => setCategorie(e.target.value)}
+          required
+        >
+          <option value="">-- Choisir une catégorie --</option>
+          {todos.categories.map((cat) => (
+            <option key={cat.id} value={cat.title}>
+              {cat.title}
+            </option>
+          ))}
+        </select>
 
         <button type="submit">Ajouter</button>
       </form>

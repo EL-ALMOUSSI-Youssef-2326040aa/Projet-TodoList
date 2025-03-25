@@ -184,3 +184,106 @@
 .task-item:hover {
   transform: scale(1.02);
 }
+
+/* Formulaire de modification des tâches */
+.task-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f9f9f9; /* Fond clair pour le formulaire */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre pour le formulaire */
+  width: 100%;
+  max-width: 400px; /* Limiter la largeur du formulaire */
+  margin: 10px auto; /* Centrer le formulaire */
+}
+
+/* Champs de saisie dans le formulaire */
+.task-edit-form input[type="text"],
+.task-edit-form input[type="date"],
+.task-edit-form input[type="color"] {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* Les champs prennent toute la largeur disponible */
+}
+
+/* Checkbox pour le statut urgent */
+.task-edit-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Boutons du formulaire */
+.task-edit-form button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Bouton pour enregistrer */
+.task-edit-form button[type="submit"] {
+  background-color: #28a745; /* Vert pour enregistrer */
+  color: white;
+}
+
+.task-edit-form button[type="submit"]:hover {
+  background-color: #218838; /* Vert plus foncé au survol */
+}
+
+/* Bouton pour annuler */
+.task-edit-form button[type="button"] {
+  background-color: #dc3545; /* Rouge pour annuler */
+  color: white;
+}
+
+.task-edit-form button[type="button"]:hover {
+  background-color: #c82333; /* Rouge plus foncé au survol */
+}
+
+/* Bouton pour la modification */
+.edit-btn {
+  background-color: rgba(255, 255, 255, 0.616); /* Bleu pour la modification */
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px; /* Espacement entre les boutons */
+}
+
+.edit-btn:hover {
+  background-color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+/* Style pour les catégories */
+.task-category {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* Couleurs spécifiques pour les catégories */
+.task-category-marketing {
+  background-color: orange; /* Couleur pour Marketing */
+}
+
+.task-category-dev {
+  background-color: pink; /* Couleur pour Dev */
+}
+
+.task-category-autre {
+  background-color: #87ceeb; /* Couleur pour Autre (bleu ciel) */
+}
