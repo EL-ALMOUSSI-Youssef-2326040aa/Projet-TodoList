@@ -470,3 +470,25 @@
   background-color: #f9f9f9;
   cursor: pointer;
 }
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.search-container input {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+}

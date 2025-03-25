@@ -9,6 +9,7 @@ function App() {
   const [taches, setTaches] = useState(todos.taches || []);
   const [editingTaskId, setEditingTaskId] = useState(null); // ID de la tâche en cours d'édition
   const [sortCriteria, setSortCriteria] = useState('date_echeance'); // Critère de tri par défaut
+  const [searchQuery, setSearchQuery] = useState(''); // État pour la recherche
 
   // Fonction pour ajouter une tâche
   const addTask = (newTask) => {
@@ -53,11 +54,31 @@ function App() {
     }
   };
 
+  // Fonction pour filtrer les tâches par recherche
+  const filterTasks = (tasks, query) => {
+    if (!query) return tasks;
+    return tasks.filter((tache) =>
+      tache.title.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
   return (
     <div className="App">
       <Header taches={taches} />
       <div className="task-container">
         <h3>Liste des tâches :</h3>
+
+        {/* Champ de recherche */}
+        <div className="search-container">
+          <label htmlFor="search">Rechercher :</label>
+          <input
+            type="text"
+            id="search"
+            placeholder="Rechercher une tâche..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
 
         {/* Menu de tri */}
         <div className="sort-container">
@@ -75,7 +96,7 @@ function App() {
 
         {/* Liste des tâches */}
         <ul className="task-list">
-          {sortTasks(taches, sortCriteria).map((tache) => (
+          {filterTasks(sortTasks(taches, sortCriteria), searchQuery).map((tache) => (
             <li
               key={tache.id}
               className={`task-item ${tache.done ? 'task-done' : 'task-in-progress'} ${
