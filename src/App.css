@@ -287,3 +287,164 @@
 .task-category-autre {
   background-color: #87ceeb; /* Couleur pour Autre (bleu ciel) */
 }
+
+/* Conteneur des onglets */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc; /* Ligne de séparation sous les onglets */
+}
+
+/* Boutons des onglets */
+.tab {
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #f9f9f9; /* Couleur de fond par défaut */
+  border: 1px solid #ccc;
+  border-bottom: none; /* Supprimer la bordure inférieure pour les onglets */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab.active {
+  background-color: #007bff; /* Couleur de fond pour l'onglet actif */
+  color: white; /* Couleur du texte pour l'onglet actif */
+  border-color: #007bff; /* Bordure bleue pour l'onglet actif */
+  border-bottom: 2px solid white; /* Masquer la bordure inférieure de l'onglet actif */
+}
+
+.tab:not(.active):hover {
+  background-color: #e0e0e0; /* Couleur de fond au survol */
+  color: #000; /* Couleur du texte au survol */
+}
+
+/* Bouton principal */
+.add-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Menu déroulant */
+.menu {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #ffffff; /* Fond blanc pour un contraste clair */
+  border: 1px solid #ddd; /* Bordure plus douce */
+  border-radius: 12px; /* Bordures arrondies */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  padding: 20px;
+  width: 320px; /* Légèrement plus large */
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition */
+}
+
+/* Animation pour le menu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Conteneur des onglets */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee; /* Ligne de séparation sous les onglets */
+}
+
+/* Boutons des onglets */
+.tab {
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #f9f9f9; /* Couleur de fond par défaut */
+  border: 1px solid #ddd;
+  border-bottom: none; /* Supprimer la bordure inférieure pour les onglets */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 8px 8px 0 0; /* Arrondir les coins supérieurs */
+}
+
+.tab.active {
+  background-color: #007bff; /* Couleur de fond pour l'onglet actif */
+  color: white; /* Couleur du texte pour l'onglet actif */
+  border-color: #007bff; /* Bordure bleue pour l'onglet actif */
+  border-bottom: 2px solid white; /* Masquer la bordure inférieure de l'onglet actif */
+}
+
+.tab:not(.active):hover {
+  background-color: #e0e0e0; /* Couleur de fond au survol */
+  color: #000; /* Couleur du texte au survol */
+}
+
+/* Formulaire dans le menu */
+.menu form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacement entre les champs */
+}
+
+.menu label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.menu input,
+.menu select,
+.menu button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu input:focus,
+.menu select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.menu button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: #218838;
+}
