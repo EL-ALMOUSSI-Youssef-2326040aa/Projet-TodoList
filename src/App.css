@@ -448,3 +448,25 @@
 .menu button:hover {
   background-color: #218838;
 }
+
+.sort-container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-container label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sort-container select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
